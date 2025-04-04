@@ -1,0 +1,27 @@
+*/Write a program to create a class with name MyApp and with functions name Accept() and Display(), Accept() function will accept email and password 
+as parameter and display() function will display the info entered by the user*/
+
+#include<iostream>
+using namespace std;
+class MyApp
+{
+    public: void Accept(string Email , string Password)//FORMAL PARAMETER
+    {
+        cout<<"\n Information entered by the user is (Accept)";
+        cout<<"\n Email ="<<Email<<"\n Password is ="<<Password;
+        Email= "abc@gmail.com";
+        Password= "123";
+    }
+};
+int main()
+{
+    MyApp obj;
+    string Email,Password;
+    cout<<"\n Enter your Email";
+    cin>>Email;
+    cout<<"\n Enter your Password";
+    cin>>Password;
+    obj.Accept(Email,Password);//ACTUAL PARAMETER
+    cout<<"\n Email ="<<Email<<"\n Password is ="<<Password;
+    return 0;
+}
