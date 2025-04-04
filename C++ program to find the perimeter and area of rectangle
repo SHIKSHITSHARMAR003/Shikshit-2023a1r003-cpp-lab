@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class rectangle{
+    private: int length , breadth;
+    public: rectangle(int len , int wid): length(len),breadth(wid){}
+     
+        int calculatearea(){
+            cout<<"area of rect. is "<<length*breadth;
+        }
+        int calculateperimeter(){
+            cout<<"perimeter of rect.is "<<2*(length+breadth);
+        }
+    };
+    int main(){
+        int length , breadth;
+        cout<<"enter the length ";
+        cin>>length;
+        cout<<"enter the breadth ";
+        cin>>breadth;
+        rectangle rectangle(length , breadth);
+        int area = rectangle.calculatearea();
+        cout<<"area is: "<<area;
+        int perimeter = rectangle.calculateperimeter();
+        cout<<"perimeteris: "<<perimeter;
+        return 0;
+    }
+
