@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class BankApp {
+private:
+    int accountNumber;
+    double accountBalance;
+
+public:
+    // Parameterized constructor
+    BankApp(int accNum, double accBal) {
+        accountNumber = accNum;
+        accountBalance = accBal;
+    }
+
+    // Function to display account details
+    void displayAccountDetails() const {
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Account Balance: $" << accountBalance << endl;
+    }
+
+    // Function to update account balance
+    void updateBalance(double amount) {
+        accountBalance += amount;
+    }
+
+    
+};
+
+
+
+int main() {
+    // Creating an object of BankApp
+    BankApp myAccount(12345, 1000.00);
+
+    cout << "Initial Account Details:" << endl;
+    myAccount.displayAccountDetails();
+
+    // Updating balance
+    double amount;
+    cout << "\nEnter amount to deposit: ";
+    cin >> amount;
+    updateAmount(myAccount, amount);
+
+    // Displaying updated details
+    cout << "\nUpdated Account Details:" << endl;
+    myAccount.displayAccountDetails();
+
+    return 0;
+}
