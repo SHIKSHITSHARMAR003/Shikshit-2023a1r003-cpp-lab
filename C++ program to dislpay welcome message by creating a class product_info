@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+class product_info{
+    public: void welcome_message(){
+        cout<<"Welcome to mystore";
+    }
+};
+int main(){
+    product_info obj;
+    obj.welcome_message();
+    return 0;
+}
