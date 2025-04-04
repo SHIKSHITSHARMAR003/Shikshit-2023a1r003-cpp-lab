@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class info{
+    private: int pin=123; string name; int reg; int marks; float percentage;
+    public: void login(){
+        if(pin==123){
+            cout<<"Login successful";
+        }
+     }
+     void Display_info(){
+        cout<<"Welcome"<<endl;
+        cout<<"Name:";
+        cin>>name;
+        cout<<"regnumber: ";
+        cin>>reg;
+        cout<<"Enter marks: ";
+        cin>>marks;
+        cout<<"Percentage: ";
+        cin>>percentage;
+        cout<<"Your details are:"<<endl;
+        cout<<name<<endl;
+        cout<<reg<<endl;
+        cout<<marks<<endl;
+        cout<<percentage<<endl;
+        cout<<pin<<endl;
+     }
+    };
+int main(){
+    info s;
+    s.login();
+    s.Display_info();
+}
