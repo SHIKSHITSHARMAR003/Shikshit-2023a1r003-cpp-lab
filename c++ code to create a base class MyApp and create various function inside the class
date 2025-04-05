@@ -1,0 +1,112 @@
+#include <iostream>
+ #include <string>
+ using namespace std;
+ 
+// Base Class
+class MyApp {
+protected:
+int reg_no;
+float marks;
+string grade;
+ 
+public:
+void welcome_message() {
+cout << " Welcome to MyApp  \n";
+}
+ 
+int login() {
+int pin;
+cout << "Enter your PIN to login: ";
+cin >> pin;
+ 
+if (pin == 123) {
+cout << "Login Successful!\n";
+return 1;
+} else {
+cout << "Invalid PIN! Access Denied.\n";
+return false;
+}
+}
+ 
+void accept() {
+cout << "Enter Registration Number: ";
+cin >> reg_no;
+cout << "Enter Marks (out of 100): ";
+cin >> marks;
+}
+ 
+void display() {
+cout << "\n** Student Information **\n";
+cout << "Registration Number: " << reg_no;
+cout << "Marks: " << marks ;
+cout << "Grade: " << grade ;
+}
+ 
+float getMarks() {
+return marks;
+}
+ 
+void setGrade(string g) {
+grade = g;
+}
+ 
+string getGrade() {
+return grade;
+}
+};
+ 
+ // Derived Class 1
+ class grade_cal : public MyApp {
+ public:
+void Calc() {
+float percentage = getMarks();
+ 
+if (percentage >= 80 && percentage <= 100) {
+setGrade("A");
+} else if (percentage >= 70 && percentage < 80) {
+setGrade("B");
+} else if (percentage >= 60 && percentage < 70) {
+setGrade("C");
+} else {
+    setGrade("Not Qualified");
+}
+ 
+    cout << "\nCalculated Grade: " << getGrade() << endl;
+}
+};
+ 
+ // Derived Class 2
+class course_selection : public grade_cal {
+public:
+void select() {
+string g = getGrade();
+ 
+cout << "\n Course Selection \n";
+if (g == "A") {
+cout << " Courses option : Cyber Security, Net Programming\n";
+} else if (g == "B") {
+cout << " Courses option : Ethical Hacking, Full Stack Development\n";
+} else if (g == "C") {
+cout << " Courses option: MERN Programming, AI/ML\n";
+} else {
+cout << "No courses available. Student not qualified.\n";
+}
+}
+};
+ 
+ // Main Function
+ int main() {
+    course_selection student;
+ 
+    student.welcome_message();
+ 
+     if (student.login()) {
+    student.accept();
+    student.Calc();
+    student.display();
+    student.select();
+    }
+ 
+     return 0;
+ }
+ 
